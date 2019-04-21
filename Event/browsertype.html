@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>browser type </title>
+    <script>
+        //null false o NaN 都是false
+        if(window.XMLHttpRequest){//Mozilla, Safari, IE7, IE8
+            //如果没有ActiveXObject 就是Mozilla 或 Safari
+            if(!window.ActiveXObject){ //Mozilla, Safari,
+                alert('Mozilla, Safari');
+            }else{
+                alert('IE');
+            }
+        }else{
+            //如果没有XMLHttpReques属性 就是IE6
+            alert('IE6');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

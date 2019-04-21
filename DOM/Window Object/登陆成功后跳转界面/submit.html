@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit</title>
+    <script language="JavaScript" type="text/javascript">
+
+        function checkUser() {
+            if( $("username").value == "cuiyunqi" && $("password").value == '123456' ){
+                return true;
+            }else{
+                window.alert("Wrong password!");
+                return false;
+            }
+        }
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+    </script>
+</head>
+<body>
+<form action="ok.html">
+    username : <input type="text" id="username"></br>
+    password : <input type="text" id="password"></br>
+    <input type="submit" value="submit" onclick="return checkUser()"/>
+
+</form>
+
+</body>
+</html>

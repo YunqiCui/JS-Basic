@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Style Object</title>
+    <script type="text/javascript">
+        //按钮更改坦克的方向
+        function changeDir(obj) {
+           if(obj.value === "up") {
+               document.getElementById("tank").style.backgroundPositionY = "0px";
+           }else if(obj.value === "right") {
+                document.getElementById("tank").style.backgroundPositionY = "120px";
+           }else if(obj.value === "down") {
+                document.getElementById("tank").style.backgroundPositionY = "80px";
+           }else if(obj.value === "left") {
+                document.getElementById("tank").style.backgroundPositionY = "40px";
+           }
+        }
+
+    </script>
+</head>
+<body>
+    <div id="tank" style="background-image: url('tank.png');width: 40px;height: 40px;"></div><br/>
+
+    <button onclick="changeDir(this)" value="up">up</button>
+    <button onclick="changeDir(this)" value="right">right</button>
+    <button onclick="changeDir(this)" value="down">down</button>
+    <button onclick="changeDir(this)" value="left">left</button>
+
+</body>
+</html>

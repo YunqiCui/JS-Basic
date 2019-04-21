@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window2</title>
+    <script language="JavaScript" type="text/javascript">
+
+        var mywindow;
+        //open() window.open(URL, name, specs, replace)
+        function openWindow(){
+            //window.open 会返回一个指向自窗口的变量 即mywindow
+            mywindow= window.open("","mywindow","width=500, height=500");
+            mywindow.document.write("<p>This is 'myWindow'</p>");
+        }
+
+        //moveTo() 把窗口的左上角移动到一个指定的坐标 需要创建新的窗口才行
+        function moveWindowTo() {
+            mywindow.moveTo(200,500);
+            mywindow.focus();
+        }
+
+        //moveBy() 把窗口移动到相应位置，根据当前位置设定x,y坐标。
+        function moveWindowBy() {
+            mywindow.moveBy(200,500);
+            mywindow.focus();
+        }
+
+        //resizeTo() 把窗口改变到指定的大小
+        function resizeWindowTo() {
+            mywindow.resizeTo(100,100);
+            mywindow.focus();
+        }
+
+        //resizeBy() 把窗口按现有基础增加一定大小 整数为增加 负数为减少
+        function resizeWindowBy() {
+            mywindow.resizeBy(100,100);
+            mywindow.focus();
+        }
+
+    </script>
+
+
+</head>
+<body>
+我是一个窗口
+<input type="button" value="create window" onclick="openWindow()"/>
+<input type="button" value="moveTo" onclick="moveWindowTo()"/>
+<input type="button" value="moveBy" onclick="moveWindowBy()"/>
+<input type="button" value="resizeTo" onclick="resizeWindowTo()"/>
+<input type="button" value="resizeBy" onclick="resizeWindowBy()"/>
+</body>
+</html>

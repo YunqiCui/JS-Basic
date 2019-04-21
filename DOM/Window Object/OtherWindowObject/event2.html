@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event2</title>
+    <script language="JavaScript" type="text/javascript">
+
+        function test(event) {
+            //用户每按下一个按键就判断是不是数字
+            if( event.keyCode<48 || event.keyCode > 57){
+                window.alert("Please enter number!");
+                //让打错的字母不会被输入到本文框中
+                window.event.returnValue = false;
+                //或者使用return false， onkeypress="return test(event)"
+            }
+        }
+    </script>
+</head>
+<body>
+Please type in a number<br/>
+<textarea id="text1" onkeypress="test(event)"></textarea>
+<button id="but1" onclick="test()">Submit</button>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window Objects</title>
+    <script language="JavaScript" type="text/javascript">
+     //history 包含之前访问过的页面信息
+        function goBack() {
+            // history.back();
+            history.go(-1);
+        }
+     //location 刷新页面 包含地址的各个信息
+        function reloadPage() {
+            location.reload();
+            document.write(location.href + "----" +location.hostname + "---" + location.port);
+        }
+
+     //navigator 包含当前浏览器的各信息
+        function testNavigator() {
+            document.write(navigator.appName + "---"+ navigator.appVersion + "----" + navigator.platform);
+        }
+        //其他常用函数 和属性
+        // navigator.javaEnabled();
+        // navigator.language;
+        // navigator.cookieEnabled;
+
+     //screen 包含当前屏幕的各个信息 没有函数 只有属性
+        function testScreen() {
+            document.write(screen.height + "---" + screen.width);
+            document.write(screen.availHeight + "---" + screen.availWidth);
+        }
+
+    </script>
+
+</head>
+<body>
+
+<a href="#" onclick="goBack()">Go back to last page!</a>
+<button onclick="reloadPage()">Reload</button>
+<button onclick="testNavigator()">Navigator</button>
+<button onclick="testScreen()">Screen</button>
+
+asdfsadf
+
+</body>
+</html>

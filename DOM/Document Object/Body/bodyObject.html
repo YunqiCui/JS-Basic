@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Body Object</title>
+    <script language="JavaScript" type="text/javascript">
+        // innerText 浏览器当作文本解析
+        function innerTextTest() {
+            document.getElementById("myspan").innerText = "<a href ='http://www.baidu.com'>到百度</a>"
+        }
+
+        // innerHTML 浏览器当作HTML代码解析
+        function innerHtmlTest() {
+            document.getElementById("myspan").innerHTML = "<a href ='http://www.baidu.com'>到百度</a>"
+        }
+
+        //body 特有的事件
+        // onscroll
+        function scrollTest(){
+            var mylink = document.getElementById("link1");
+            mylink.style.top = parseInt(document.body.scrollTop+40)+"px";
+            mylink.style.left = document.body.scrollLeft+"px";
+        }
+
+        //onselect 当用户选中页面中的文本时相应的事件
+
+
+
+        //clientWidth clientHeight
+
+        //offsetWidth  offsetHeight
+
+    </script>
+</head>
+<body onscroll="return scrollTest()">
+<textarea cols="500" rows="500">
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+    a
+</textarea>
+    <a id="link1" style="top: 100px;left: 0px;position:absolute;" href="http://www.baidu.com"><img src="猜拳游戏.png" alt="baidu"></a>
+<!--    <span id="myspan"></span>-->
+<!--    <button id="but1" onclick="innerTextTest()">Test innerText</button>-->
+<!--    <button id="but2" onclick="innerHtmlTest()">Test innerHtml</button>-->
+
+
+</body>
+</html>

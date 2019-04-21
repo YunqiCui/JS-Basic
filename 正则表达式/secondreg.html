@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Second Reg</title>
+    <script type="text/javascript">
+        //regobj.test()方法
+        function test1() {
+            var con = text1.value;
+            var myreg =/abc/gi;
+
+            if(myreg.test(con)){
+                alert("有abc");
+            }else{
+                alert("没有abc");
+            }
+        }
+
+        //string search 方法 search 方法如果找到匹配的字符串 则返回该字符串第一个字符的位置 如果没找到则返回-1
+        var str = "Visit W3school";
+        window.alert(str.search(/W3school/));//输出6
+
+        //match()方法 可以检索字符串内的指定的值，或找到一个或多个正则表达式的匹配
+        function testMatch() {
+            var con = text1.value;
+            var myreg =/abc/gi;
+            res = con.match(myreg);
+            for (var i = 0; i < res.length; i++) {
+                window.alert(res[0])
+            }
+        }
+
+        //replace函数
+
+        function testReplace() {
+            var con = text1.value;
+            var myReg = /(\d){4}/;
+            text1.value = con.replace(myReg, "这里原来是四个数字");
+        }
+
+        //Reg Object, index, leftContent, rightContent属性
+        function testIndex() {
+            var con = text1.value;
+            var myReg = /(\d){4}/gi;
+            while(res = myReg.exec(con)){
+                alert("index : " + myReg.lastIndex);
+            }
+        }
+        //
+
+    </script>
+</head>
+<body>
+    <label for="text1"></label>
+    <textarea id="text1" rows="10" cols="20"></textarea>
+    <label for="but1"></label>
+    <button id="but1" onclick="testMatch()">测试Match</button>
+    <button id="but2" onclick="testReplace()">测试Replace</button>
+    <button id="but3" onclick="testIndex()">测试Index</button>
+</body>
+</html>

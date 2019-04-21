@@ -1,0 +1,10 @@
+DOM编程是ajax的基础
+
+DOM 可以让用户操纵网页元素。
+
+DOM document object model(文档对象模型)
+DOM 是HTML 与 XML的应用编程接口(API)
+DOM 将整个页面映射为一个由层次节点组成的文件。
+
+js 会把浏览器，网页文档和HTML中的元素都用相应的内置对象来表示。
+

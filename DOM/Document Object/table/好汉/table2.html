@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table2</title>
+    <script type="text/javascript">
+        function addHero() {
+            //遍历整个表格 看有没有重复的编号
+            var myrows = mytable.rows;
+            for (var i = 0; i < myrows.length; i++) {
+                var eachrow = myrows[i];
+                if(eachrow.cells[0].innerText=== no.value){
+                    window.alert("编号不能重复");
+                    return ;
+                }
+            }
+
+            //获取用户输入的信息
+            var tableRow = mytable.insertRow(myrows.length);
+            tableRow.insertCell(0).innerText = no.value;
+            tableRow.insertCell(1).innerText = heroname.value;
+            tableRow.insertCell(2).innerText = nick.value;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>英雄排行榜</h1>
+    <table id="mytable" border="solid">
+        <tr><td>排名</td><td>姓名</td><td>外号</td></tr>
+        <tr><td>1</td><td>松江</td><td>及时雨</td></tr>
+        <tr><td>2</td><td>卢俊义</td><td>玉麒麟</td></tr>
+    </table>
+
+    <h1>请输入新的好汉</h1>
+    编号<input type="text" id="no"/><br/>
+    名字<input type="text" id="heroname"/><br/>
+    外号<input type="text" id="nick"/><br/>
+    <button id="addButton" onclick = "addHero()">添加</button>
+
+</body>
+</html>

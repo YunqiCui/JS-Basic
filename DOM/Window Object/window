@@ -1,0 +1,4 @@
+window是全局对象
+使用window 方法时可以不带window
+比如window.alert()可以直接写alert();
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <script type="text/javascript">
+        function test() {
+            //取得所有的表单
+            var allforms = document.forms;
+            // alert(allforms.length);
+
+            //通过allforms 访问指定表单
+            // alert(allforms[0].username.value); 等价于下面的写法
+            alert(allforms.item(0).username.value);
+        }
+    </script>
+
+</head>
+<body>
+    <h1>个人信息</h1>
+    <form action="">
+        Username:<input type="text" name="username"/><br/>
+        Password:<input type="password" name="password"/><br/>
+           <button value="submit">Submit</button>
+    </form>
+
+    <h1>爱好</h1>
+    <form action="">
+        Hobby 1:<input type="text" name="hobby1"/><br/>
+        Hobby 2:<input type="text" name="hobby2"/><br/>
+        <button value="submit">Submit</button>
+    </form>
+
+    <button id="butTest" onclick="test()">Test</button>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Node</title>
+<!--    动态创建HTML元素   -->
+    <script language="JavaScript" type="text/javascript">
+        function createElementTest() {
+            //创建元素
+            var cElement = document.createElement("a");//参数 html元素名
+            cElement.id = "id1";
+            // //给新元素添加信息
+            cElement.href = "https://www.baidu.com/";
+            cElement.innerText = "链接到百度";
+
+            //添加到document中
+            // cElement.style.top = "100px";
+            // cElement.style.left = "100px";
+            // cElement.style.position = "absolute";
+            // document.body.appendChild(cElement);
+
+            //把新元素加到新的div中
+            document.getElementById("div1").appendChild(cElement);
+        }
+        
+        function removeElementTest() {
+            //动态删除元素 通过id号来删除，已知他的父元素
+
+            //方法一 已知父元素id
+            document.getElementById("div1").removeChild(document.getElementById("id1"));
+            //方法二 不知道父元素id
+            document.getElementById("id1").parentNode.removeChild(document.getElementById("id1"));
+            //不知道父元素id 把获取父元素封装起来
+            getParent("id1").removeChild(document.getElementById("id1"));
+        }
+
+        //获取父元素方法
+        function getParent(id){
+            return document.getElementById(id).parentNode;
+        }
+        
+        //Node
+        
+        function nodeTest() {
+            // node 属性
+            var div1 = document.getElementById("div1");
+            window.alert(div1.nodeType + " " + div1.nodeName + " " + div1.nodeValue);
+            //childNodes.length html中的换行 会影响打出的子节点长度
+            alert(div1.childNodes.length);
+            //其他属性
+            // firstChild, lastChild, previousSibling, nextSibling, ownerDocument, attributes， parentNode
+
+            // node 方法
+            // hasChildNodes()
+            // appendChild()
+            // removeChild()
+            // replaceChild(oldNode,newNode)
+            // insertBefore(newNode, refNode)
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <button onclick="createElementTest()">动态创建元素</button>
+    <button onclick="removeElementTest()">动态删除元素</button>
+    <button onclick="nodeTest()">查看节点属性</button>
+    <div id="div1" style="width: 200px; height: 200px;border: 1px solid red"><span>abc</span></div>
+</body>
+</html>

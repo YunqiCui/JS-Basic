@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window</title>
+
+    <script language="JavaScript" type="text/javascript">
+
+
+
+    //confirm() 显示一个含确认按钮的提示框。
+       function del() {
+        var res = window.confirm("Do you want to delete?");
+       if(res){
+           alert("Delete completed!");
+       }else{
+           alert("Delete canceled!");
+       }
+    }
+
+    //setInterval() 根据制定的时间（毫秒） 循环的执行某个函数或者一个表达式 setInterval(code,millesec,lang[]);
+        //每隔一秒钟 弹出一个对话框。
+        function sayHello() {
+            alert("OK!");
+        }
+        // setInterval(sayHello,1000);
+        //简单的小时钟
+        function showTime(){
+           document.getElementById("myTime").innerText = new Date().toLocaleString();
+        }
+        // setInterval(showTime,1000);
+
+    //使小人动起来  动一段事件后停止 10秒后再动
+        var n=1;
+        count = 0;
+
+
+        function runChild() {
+            count++;
+            if(count == 11){
+               clearInterval(myTimer);
+               setTimeout(reRun,5000);
+               count = 0;
+            }
+
+            var myimg = document.getElementById("myImg");
+            //1膜3 等于1 +1 等于2 一直到n膜3等于0 +1 回到第一个图片
+            myimg.src = ((n++%3)+1)+".png";
+        }
+        // var myTimer = setInterval(runChild,20);
+
+        function reRun(){
+             // myTimer = setInterval(runChild,20);
+        }
+    //setTimeout 在制定毫秒数后调用函数或表达式，但是只调用一次。
+         //5秒后调用sayhello
+        // setTimeout(sayHello,5000);
+
+
+    //clearTimeout
+        function test() {
+            alert("abc");
+        }
+        // var myTimer = setTimeout(test,1000);
+        // clearTimeout(myTimer);
+
+
+    </script>
+</head>
+<body>
+<span id="myTime"></span>
+<input type="button" value="Delete" onclick="del()" />
+
+<img src="1.png" id="myImg"/>
+
+</body>
+</html>

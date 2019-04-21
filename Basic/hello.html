@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <script src = "funciton1.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        // var n1 = window.prompt("Please enter the first number...");
+        // var n2 = window.prompt("Please enter the second number...");
+        // var operator = window.prompt("Please enter operator..");
+        //
+        // n1 = parseFloat(n1);
+        // n2 = parseFloat(n2);
+        //
+        // calculator(n1,n2,operator);
+
+        //系统函数
+        // var str = "window.alert('ok')";
+        // eval(str);
+        // var str1 = "崔云奇";
+        // escape(str1);
+        // window.alert(str1);
+
+        //数组遍历
+        //一维
+        // var str = "abc hhh ddd bbb";
+        // var arr = str.split(" ",2);
+        // for (var i = 0;i<arr.length;i++){
+        //     document.writeln(arr[i]);
+        // }
+
+        //二维
+        //  var arr = [["1","@2","##3"],["121","21312","121"]];
+        //
+        //  for (var i =0;i<arr.length;i++){
+        //      for(var j=0;j<arr[i].length;j++){
+        //          document.write(arr[i][j] + "&nbsp;");
+        //      }
+        //      document.writeln("<br/>")
+        // }
+
+        //二维数组转置
+        var arr = [[1,4,5,7],[0,5,9,-1],[2,0,8,5]];
+        var arr2 = [];
+        for(var i = 0;i<arr[0].length;i++){
+            arr2[i]=[];
+        }
+
+        for (var i = 0;i<arr.length;i++){
+            for(var j = 0;j<arr[i].length;j++){
+                arr2[j][i] = arr[i][j];
+            }
+        }
+
+        for (var i = 0;i<arr2.length;i++){
+            for(var j = 0;j<arr2[i].length;j++){
+                document.writeln(arr2[i][j] + "&nbsp;");
+            }
+            document.write("<br/>")
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

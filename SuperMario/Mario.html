@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mario</title>
+    <link href="css/mario.css" type="text/css" rel="stylesheet">
+    <script src = "Mario.js"></script>
+</head>
+<body>
+
+    <div class="gamediv">
+        <img class="marioimage" id="mymario" src="../mario.jpg" style="width: 100px;height: 100px;top: 1px;left: 1px;position: absolute;border: none"/>
+    </div>
+
+    <table border="1px" class="gamepad">
+        <tr ><td colspan="3">Game Pad</td></tr>
+        <tr><td>**</td><td><input type="button" value="up" onclick="marioMove(0)"/></td><td>**</td></tr>
+        <tr><td><input type="button" value="left" onclick="marioMove(3)"/></td><td>**</td><td><input type="button" value="right" onclick="marioMove(1)"/></td></tr>
+        <tr><td>**</td><td><input type="button" value="down" onclick="marioMove(2)"/></td><td>**</td></tr>
+    </table>
+
+</body>
+</html>

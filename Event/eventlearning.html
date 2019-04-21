@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Click</title>
+
+
+    <script language="javascript" type="text/javascript">
+        // 监听鼠标点击事件 现实鼠标点击处的坐标
+       function test1(e){
+            window.alert("x = " + e.clientX + " y= " + e.clientY);
+        }
+
+        // function test2() {
+        //
+        //    window.alert(new Date());
+        //
+        // }
+
+        // function test3(eventObj){
+        //    if(eventObj.value == 'black'){
+        //        var div1 = document.getElementById('div1');
+        //        div1.style.backgroundColor="black";
+        //    }else if(eventObj.value == "red"){
+        //        var div1 = document.getElementById('div1');
+        //        div1.style.backgroundColor="red";
+        //    }
+        //
+        // }
+    </script>
+
+</head>
+<body style="width: 1000px;height:1000px" onmousemove="test1(event)">
+
+    <button onclick="test2()">
+        显示当前时间
+    </button>
+
+    <div id="div1" style = "width: 400px; height: 300px; background-color: red">div1</div>
+    <input type="button" value="black" onclick="test3(this)"/>
+<!--    传this 可以通过this 来确定 是哪个button被点击-->
+    <input type="button" value="red" onclick="test3(this)"/>
+
+
+</body>
+</html>

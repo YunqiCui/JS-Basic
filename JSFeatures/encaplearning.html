@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encapu Learning</title>
+    <script language="JavaScript" type="text/javascript">
+        //封装
+        function Person(name,agep,sal) {
+            this.name = name;//公开属性
+            var age = agep;//私有属性
+            var salary = sal;//私有属性
+
+            //公开方法
+            this.getAge = function () {
+                return age;
+            }
+
+            this.getSalary = function () {
+                return salary;
+            }
+            //私有方法
+            function show() {
+                window.alert(age+" "+salary);
+            }
+        }
+
+        //封装 prototype。 通过prototype 给类添加方法，不能狗访问私有变量或私有方法。
+        Person.prototype.fun3 = function () {
+            window.alert(age);//undefined
+        }
+
+        var p1 = new Person("cuiyunqi",20,49999);
+        p1.fun3();//undefined
+        window.alert(p1.name);
+        window.alert(p1.getAge());
+        window.alert(p1.getSalary());
+        p1.show();//Error
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <script type="text/javascript">
+        //table rows,cells 取出table中的元素
+        function test() {
+            var myrows = mytable.rows;
+            alert(myrows.length);
+            //取出一个特定表格里的值
+            // alert(myrows[1].cells[2].innerText);
+
+            //遍历整个table的所有行
+            for (var i = 0; i < myrows.length; i++) {
+                //取出一行
+                var eachrow = myrows[i];
+
+                //对改行进行遍历
+                for (var j = 0; j < eachrow.cells.length; j++) {
+                    window.alert(eachrow.cells[j].innerText);
+                }
+            }
+        }
+        
+        //删除table中的一行
+        function test2() {
+            //删除一行 deleteRow index代表删除的行的index
+            mytable.deleteRow(1);
+        }
+
+        function test3() {
+            //insertRow(index); index代表 新出入行在表格中的index
+            //insertRow 返回一个table row 代表一个tr标签被插入 但是并没有td
+            var tableRow = mytable.insertRow(3);
+
+            //insertCell 返回一个table cell 代表一个新的td标签被插入
+            tableRow.insertCell(0).innerText = "3";
+            tableRow.insertCell(1).innerText = "吴用";
+            tableRow.insertCell(2).innerText="智多星";
+
+        }
+        
+        
+
+    </script>
+</head>
+<body>
+    <table id="mytable" border="solid">
+        <tr><td>排名</td><td>姓名</td><td>外号</td></tr>
+        <tr><td>1</td><td>松江</td><td>及时雨</td></tr>
+        <tr><td>2</td><td>卢俊义</td><td>玉麒麟</td></tr>
+    </table>
+    <button onclick="test()">Test</button>
+    <button onclick="test2()">Delete</button>
+    <button onclick="test3()">Add</button>
+    
+</body>
+</html>

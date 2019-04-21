@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<head>
+
+    <title>Little Sun</title>
+    <script type="text/javascript">
+        var directX = 1;//x轴方向
+        var directY = 1;//y轴方向
+        var sunX = 0;//小太阳坐标x
+        var sunY = 0;//小太阳坐标y
+
+        function sunMove() {
+            sunX+=directX;
+            sunY+=directY;
+
+            //让小太阳动起来
+            var sun = document.getElementById("sunDiv");
+            sun.style.left = sunX + "px";
+            sun.style.top = sunY + "px";
+
+            //让小太阳转向
+            //offsetWidth 返回当前对象的实际宽度
+            //clientWidth 返回当前body的宽度
+
+            //当触碰到边缘的时候 改变的小太阳的X方向
+            if (sunX+sun.offsetWidth>=document.body.clientWidth || sunX<=0){
+                directX=-directX;
+            }
+            //当触碰到边缘的时候 改变的小太阳的Y方向
+            if(sunY+sun.offsetHeight>=document.body.clientHeight || sunY<=0){
+                directY=-directY;
+            }
+        }
+        setInterval(sunMove,5);
+    </script>
+</head>
+<body style="background-image: url('img.jpg')" >
+    <div id="sunDiv" style="position: absolute;padding: 0;margin: 0">
+        <img src="sun.png" alt="little sun"/>
+    </div>
+    
+</body>
+</html>

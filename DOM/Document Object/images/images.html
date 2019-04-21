@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Images</title>
+    <script type="text/javascript">
+        //图片如果加载失败了 就会响应onerror事件
+        function test1() {
+            myspan.innerText ="no ok";
+        }
+
+        //图片如果加载成功了 就会响应onload事件
+        function test2() {
+            myspan.innerText="OK!";
+        }
+        //javascript all对象
+        function checkAll() {
+            var myall = document.all;
+            for (var i = 0; i < myall.length; i++) {
+                window.alert(myall[i].nodeType + " "+myall[i].nodeName);
+            }
+        }
+    </script>
+</head>
+<body>
+    <img src="tank.png" onerror="test1()" onload="test2()"/>
+    <span id="myspan"></span>
+    <button onclick="checkAll()"></button>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FatherWindow</title>
+    <script language="JavaScript" type="text/javascript">
+
+        //父子窗口通信
+
+        var mywindow;
+
+        function openWindow(){
+            //mywindow 指向新窗口的引用
+            mywindow = window.open("childWindow.html","_blank");
+
+        }
+
+        function sendToChild() {
+            mywindow.document.getElementById("info").value = document.getElementById("info2").value;
+        }
+    </script>
+</head>
+<body>
+Father window
+<input type="button" value="create window" onclick="openWindow()"/>
+<span id="myspan">Message</span>
+<input type="text" id="info2"/>
+<input type="button" value="Send to Child" onclick="sendToChild()"/>
+
+</body>
+</html>

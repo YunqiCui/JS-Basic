@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Reg</title>
+    <script type="text/javascript">
+        function test1() {
+
+            var con = document.getElementById("text1").value;
+            // alert(con);
+            //隐式创建正则表达式
+            // var myReg = /(\d){4}/gi;//\d代表任意一个数字 {4}代表连续出现数字
+            // var myReg = /abc/gi;
+
+            //显式表达式
+            // var myReg = new RegExp("(\\d){4}","gi");//这里的\\d 由于\被字符串包起来了 所以需要转意 增加一个\ 就可以了
+
+            //查找指定字符串
+            var myReg = new RegExp("韩顺平","gi");
+
+            while(res = myReg.exec(con)){
+
+                //exec 检索字符串中指定的值。 返回找到的值，并确定其位置。
+                //返回一个数组 其中存放储存的数组 如果没有找到则 返回值为null.
+                //每一个exec返回的结果都对应一个数组 第零个元素是与正则表达式相匹配的文本
+                //第一个元素是 与RegExpObject 的第一个自表达式相匹配的文本
+                alert("找到" + res[0]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="text1"></label>
+<textarea id="text1" rows="10" cols="20"></textarea>
+    <label for="but1"></label>
+    <button id="but1" onclick="test1()">测试</button>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <script language="JavaScript" type="text/javascript">
+
+        // //使用构造函数 创造（类）原型对象
+        // function cat(){}
+        // //cat1 为 cat 的对象实例
+        // var cat1 = new cat();
+        // // js 属性可以动态添加
+        // cat1.name = "cat";
+        // cat1.age = 3;
+        // cat1.color = "White"
+
+        //在js中  一切都是对象
+        // function Person() {}
+        // var a = new Person();
+        // window.alert(a.constructor);
+        // window.alert(typeof a);//Person
+        //
+        // var a = 123;
+        // var b = "131klj1";
+        // window.alert(typeof a);//number
+        // window.alert(typeof b);//String
+
+        //如何判断一个实例是不是 Person
+        // function Person() {
+        // }
+        // var a = new Person();
+        // // var a = 123;
+        // // if(a instanceof Person){
+        // //     window.alert(true);
+        // // }else {
+        // //     window.alert(false);
+        // // }
+        // if (a.constructor == Person){
+        //     window.alert("true1");
+        // }
+
+        //var 生命的是全局变量
+        // var abc = 89;
+        // function test() {
+        //     //在函数内部，如果不带var 则表示 使用外面的全局abc变量
+        //     //如果带上var 则表示 我在函数内部定义了 新的局部变量
+        //     var abc = 900;
+        // }
+        //
+        // test();
+        // window.alert(abc);
+
+        // function Person() {};
+        // var p1 = new Person();
+        // p1.name = "cui";
+        // window.alert(p1.name);
+        // //第二种方法p1[""] 可以 进行动态访问
+        // window.alert(p1["name"]);
+
+        // //对象回收机制
+        // function Person() {}
+        // var a = new Person();
+        // a.name = "cui";
+        // a.age = 10;
+        // var b = a;
+        // b.name = "white";
+        // window.alert(b.age + " " +b.name + a.name  );
+        // b = null;
+        // a = null;
+        //delete a.age;
+
+        //this 关键字
+        // function Person() {
+        //     this.name = "cui";
+        //     this.age = 10;
+        //     var name = "sss";//这个name是私有的
+        //     //公有方法
+        //     this.show = function () {
+        //         show2();
+        //     }
+        //     //私有方法 只能在person类中使用
+        //     function show2() {
+        //         window.alert(name);
+        //     }
+        // }
+        //
+        // var p1 = new Person();
+        // var p2 = new Person();
+        // p2.name = "shunping";
+        // p1.show();
+        // window.alert(p1.name + " " + p1.age);
+        // window.alert(p2.name+ " " + p2.age);
+
+        // //this 深刻理解
+        // //哪个对象实例调用this 所调用的函数 这个this就代表哪个对象实例
+        // function test1() {
+        //     alert(this.v);
+        // }
+        //
+        // var v = 90;
+        // window.test1();
+
+        // //成员方法1 推荐使用这种方法
+        // function Person(name,age) {
+        //     this.name = name;
+        //     this.age = age;
+        //
+        //     this.show = function () {
+        //         document.write("Name: " + this.name + " Age: " + this.age);
+        //     }
+        //
+        //     this.calculate = function () {
+        //         var res = 0;
+        //         for(var i = 0;i<=1000;i++){
+        //             res+=i;
+        //         }
+        //         return res;
+        //     }
+        //     this.calculaterrr = function (n) {
+        //         var res = 0;
+        //         for(var i = 0;i<=n;i++){
+        //             res+=i;
+        //         }
+        //         return res;
+        //     }
+        // }
+        //
+        // var p1 = new Person("cui",28);
+        // p1.show();
+        // document.write("<br/>" + p1.calculate());
+        // document.write("<br/>" + p1.calculaterrr(100));
+
+        // //成员方法2
+        // function Person() {
+        //     this.name = "abc";
+        //     this.age = 900;
+        // }
+        //
+        // function show1() {
+        //     window.alert("Hello " + this.name);
+        // }
+        //
+        // var p1 = new Person();
+        // p1.abc = show1;
+        // p1.abc();
+
+        // //成员方法3
+        // function Person() {
+        //     this.name = "abc";
+        //     this.age = 900;
+        // }
+        //
+        // var p1 = new Person();
+        // p1.abc = function show1() {
+        //     window.alert("Hello " + this.name);
+        //
+        // };
+        // p1.abc();
+
+        //成员方法案例1
+        // function Person() {
+        //     this.name = "abc";
+        //     this.age = 900;
+        //     this.abc = function (v1,v2) {
+        //         window.alert(this.name +  " " + this.age + v1+v2);
+        //     }
+        // }
+        //
+        // var p1 = new Person();
+        // p1.abc();
+        // p1.abc("Beijing","Tianjin");
+
+        //成员方法4 原型法
+        // function Dog(){
+        //
+        // }
+        // var dog1 = new Dog();
+        // //使用prototype 类  绑定一个函数给shout
+        // Dog.prototype.shout = function () {
+        //     window.alert("wangwang");
+        // }
+        // dog1.shout();
+        // var dog2 = new Dog();
+        // dog2.shout();
+        //
+        // //判断两个对象地址
+        // window.alert((dog1.shout==dog2.shout));
+        //
+        // //扩展
+        // var dog3 = new Dog();
+        // var dog4 = new Dog();
+        // var dog5 = dog4;
+        // window.alert("Dog5 = Dog4" + (dog5==dog4));
+        // 1。 当 == 两边是字符串 则比较内容
+        // 2。 当 == 两边是数字 则比较数字大小是否相等
+        // 3。 当 == 两边是对象  或者是 对象函数 则比较地址是否相等
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

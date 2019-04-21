@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poly Learning</title>
+    <script language="JavaScript" type="text/javascript">
+        // function Person() {
+        //     this.test1 = function () {
+        //         window.alert("Person test1");
+        //     }
+        // }
+        //
+        // function Cat() {
+        //     this.test1 = function () {
+        //         window.alert("Cat test1");
+        //     }
+        // }
+        //
+        // var v = new Person();
+        // v.test1();
+        // v = new Cat();
+        // v.test1();
+
+        function Master() {
+            this.feed = function (animal,food) {
+                window.alert(animal.constructor);
+                document.writeln("Master feeding " +animal.name + " with " + food.name + "<br/>");
+            }
+        }
+
+        function Food(name) {
+            this.name =name;
+        }
+
+        function Fish(name) {
+            this.food = Food;
+            this.food(name);
+        }
+
+        function Bone(name) {
+            this.food =Food;
+            this.food(name);
+        }
+
+        function Peach() {
+            this.food = Food;
+            this.food(name);
+        }
+
+        function Animal(name) {
+            this.name = name;
+        }
+
+        function Cat(name) {
+            this.animal = Animal;
+            this.animal(name);
+        }
+
+        function Dog(name) {
+            this.animal = Animal;
+            this.animal(name);
+        }
+
+        function Monkey(name) {
+            this.animal = Animal;
+            this.animal(name);
+        }
+
+        var cat = new Cat("CAT");
+        var dog = new Dog("DOG");
+        var fish = new Fish("FISH");
+        var bone = new Bone("BONE");
+        var monkey = new Monkey("MONKEY");
+        var peach = new Peach("PEACH");
+
+        var master = new Master();
+        master.feed(cat,fish);
+        master.feed(dog,bone);
+        master.feed(monkey,peach);
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+    <script language="JavaScript" type="text/javascript">
+        function a() {
+            var i = 0;
+            function b() {
+                alert(i++);
+            }
+            return b;
+        }
+
+        a();//此时内存中i空间 会被回收
+        //当c 引用了a当中的函数b的时候 就创建了一个闭包 这个时候 a执行完后，GC不会回收a所占用的资源。
+        var c = a();
+        c();// 输出 0
+        c();// 输出 1 i变量被闭包 并没有被回收
+
+        //1。闭包是与GC相关的
+        //2。闭包实际上是涉及到一个对象的属性，何时被GC回收的问题
+        //3。上面的案例可以形成一个闭包（一个变量来自上级作用域或方法时）
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

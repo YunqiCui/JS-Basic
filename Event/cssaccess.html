@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Click</title>
+    <link href="sccaccess.css" rel="stylesheet" type="text/css"/>
+
+<!--    用js控制外部css-->
+    <script language="javascript" type="text/javascript">
+        function test1(eventObj) {
+           var cssRules = document.styleSheets[0].rules;//0 代表使用第一个引用的css文件中的东西
+
+           var rules = cssRules[0];//0 代表该css文件中的第一个选择器
+
+            if(eventObj.value == 'black'){
+                rules.style.backgroundColor="black";
+            }else if(eventObj.value == "red"){
+                rules.style.backgroundColor="red";
+            }
+        }
+        // function test2() {
+        //     window.alert("onload...")
+        //     document.getElementById('text1').onfocus;
+        //     //页面打开
+        // }
+
+        function test3() {
+            window.alert("onunload");
+            //页面关闭后
+        }
+        function test4() {
+            window.alert("onbeforeunload");
+            //页面关闭前
+        }
+
+        function test5() {
+            window.alert("输入框被选择");
+        }
+
+        //点击鼠标右键不出菜单
+        //oncontextmenu
+
+        //不允许拷贝 onselectstart
+        function test6() {
+            window.alert("dont select");
+            return false;
+        }
+
+
+    </script>
+
+</head>
+<body style="width: 1000px;height:1000px" onload="test2()" onbeforeunload="test4()" onunload="test3()" oncontextmenu="return false" onselectstart="return test6()">
+
+    <div id="div1" class="style1">div1</div>
+    <input type="button" value="black" onclick="test1(this)"/>
+    <!--    一个事件 可以被多个函数监听  onClick="test1(this), test2(this)" -->
+    <input type="button" value="red" onclick="test1(this)"/>
+<!--    <input type="text" id="text1" onfocus="test5()"/>-->
+
+
+</body>
+</html>

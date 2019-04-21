@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+ul{
+    list-style-type: none;
+}
+body{
+    font-size: 12px;
+
+}
+.div1{
+    width: 126px;
+    height: 156px;
+    /*background-color: pink;*/
+}
+.nav{
+    width: 21px;
+    height: 156px;
+    float:left;
+}
+.nav li{
+    height: 50px;
+    margin-top: 2px;
+    background-color: silver;
+    float: left;
+    text-align: center;
+}
+.zs,.rz,.cg{
+    width: 102px;
+    height: 156px;
+    /*background-color: green;*/
+    float: left;
+    margin-top: 2px;
+}
+.rz,.cg{
+    display: none;;
+}
+

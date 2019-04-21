@@ -1,0 +1,4 @@
+JS 本身提供一些 可以直接使用的类
+主要有：Object, Array, Math, Boolean, String,Date,Number,RegExp(正则表达式)
+动态类： 需要 使用var 对象实例名 来使用属性和方法
+静态类： 直接使用类名.方法

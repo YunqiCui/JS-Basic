@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script language="JavaScript" type="text/javascript">
+        //document.write()  document.writeln() 对于浏览器来说 输出效果没有区别
+        document.write("Hello");
+        document.writeln("Hello");
+
+        //getElementById
+        function testId() {
+            var myhref = document.getElementById("a1");
+            //当id不唯一时 只返回找到的第一个。id 最好不要用数字开头
+            alert(myhref.innerText);
+        }
+        //getElementByName
+        function testName() {
+            var hobbies = document.getElementsByName("hobby");
+            for (var i = 0;i<hobbies.length;i++){
+                if (hobbies[i].checked){
+                    window.alert("Your hobbies are " + hobbies[i].value);
+                }
+            }
+            // window.alert(hobbies.length);
+        }
+        //getElementsByTagName
+        function testTagName() {
+            var inputTags = document.getElementsByTagName("input");
+            for (var i = 0; i < inputTags.length; i++) {
+                window.alert(inputTags[i].value);
+            }
+            window.alert(inputTags.length);
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+    <a id="a1" href="www.sohu.com">连接到sohu</a><br/>
+    <a id="a2" href="www.163.com">连接到sohu</a><br/>
+    <a id="a3" href="www.baidu.com">连接到sohu</a><br/>
+    <button onclick="testId()">TestId</button>
+
+    <input type="checkbox" name="hobby" value="Football"/>Football
+    <input type="checkbox" name="hobby" value="Basketball"/>Basketball
+    <input type="checkbox" name="hobby" value="Tennis"/>Teenis
+    <input type="checkbox" name="hobby" value="Music"/>Music
+    <button onclick="testName()">TestName</button>
+
+    <button onclick="testTagName()">TestTagName</button>
+
+</body>
+</html>

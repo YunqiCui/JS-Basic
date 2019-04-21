@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select All</title>
+    <script type="text/javascript">
+        function selectCheck(obj) {
+            var fruits = document.getElementsByName("fruit");
+            if(obj.innerText==="Select All"){
+                for (var i = 0; i < fruits.length; i++) {
+                    fruits[i].checked = true;
+                }
+            }else {
+                for (var i = 0; i < fruits.length; i++) {
+                    fruits[i].checked = false;
+                }
+            }
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="fruit" onclick="shopping(this)" value="10"/>Apple $10<br/>
+    <input type="checkbox" name="fruit" onclick="shopping(this)" value="20"/>Banana 20$<br/>
+    <input type="checkbox" name="fruit" onclick="shopping(this)" value="30"/>Watermelon 30$<br/>
+    <input type="checkbox" name="fruit" onclick="shopping(this)" value="40"/>Pear $40<br/>
+    <input type="checkbox" name="fruit" onclick="shopping(this)" value="50"/>Peach $50<br/>
+
+    <a href="#" onclick="selectCheck(this)">Select All</a>
+    <a href="#" onclick="selectCheck(this)">Cancel</a>
+
+</body>
+</html>

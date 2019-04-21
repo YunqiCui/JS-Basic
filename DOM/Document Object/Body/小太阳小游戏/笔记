@@ -1,0 +1,5 @@
+clientHeight 和 offsetHeight总是返回0
+
+I had this problem too. It's because visual studio auto defaults the doctype to XHTML and this caused IE (don't know about other browsers) to return zero for clientHeight.
+I changed it to <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+

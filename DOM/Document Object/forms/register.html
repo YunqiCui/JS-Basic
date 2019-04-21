@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="formcss.css"/>
+    <script type="text/javascript">
+        //通过javascript 验证表单提交的信息
+        function checkInfo() {
+            //每次提交之前清空提示信息
+            var spans= document.getElementsByTagName("span");
+            for (var i = 0; i < spans.length; i++) {
+                spans[i].innerText ="";
+            }
+            //获取表单中输入的用户名
+            var registerform = document.forms.item(0);
+
+            //根据用户输入的信息做出提示信息
+            //** 如何在每次用户输入的时候，提示出所有的信息？？
+            if (registerform.username.value.length <4 || registerform.username.value.length >6){
+                span1.innerText = "用户名应在4到6位间";
+                return false;
+            }
+            if(registerform.pwd1.value.length<=3){
+                span2.innerText = "密码要求大于3三位";
+                return false;
+            }
+            if(registerform.pwd1.value !== registerform.pwd2.value){
+                span3.innerText="输入的两次密码不一样";
+                return false;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="" onsubmit="return checkInfo()">
+        <table>
+            <tr><td>用户名</td><td><input type="text" name="username"/><span id="span1" onclick="checkInfo()"></span></td></tr>
+            <tr><td>密 码</td><td><input type="password" name="pwd1"/><span id="span2" onclick="checkInfo()"></span></td></tr>
+            <tr><td>确认密码</td><td><input type="password" name="pwd2"/><span id="span3" onclick="checkInfo()"></span></td></tr>
+            <tr><td>年  龄</td><td><input type="text" name="age"/><span id="span4" onclick="checkInfo()"></span></td></tr>
+            <tr><td>电子邮件</td><td><input type="text" name="email"/><span id="span5" onclick="checkInfo()"></span></td></tr>
+            <tr><td>电话号码</td><td><input type="text" name="phone"/><span id="span6" onclick="checkInfo()"></span></td></tr>
+            <tr><td><button type="submit" >注册新用户</button></td><td><button type="reset">重新填写</button></td></tr>
+
+
+        </table>
+    </form>
+
+    
+</body>
+</html>

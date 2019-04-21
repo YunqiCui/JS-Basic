@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    //event其他属性
+    //screenX, screenY, altKey, shiftKey, clientX, clientY
+
+</head>
+
+<body>
+<button id="but1">Hello</button>
+<button id="but2">Vote</button>
+<script language="JavaScript" type="text/javascript">
+    //绑定事件的方式
+    //直接绑定至某个html 控件
+
+
+    //通过getElementById() 获取到元素后 再绑定事件监听
+    function eventTest1() {
+        document.write("Hello!");
+    }
+    document.getElementById("but1").onclick=eventTest1;
+
+    //投票系统 只能投票一次
+    document.getElementById("but2").addEventListener("click",eventTest2);
+    function eventTest2() {
+        window.alert("Vote done!");
+        //解除事件绑定 removeEventListener 和 addEventListener 要搭配使用
+        document.getElementById("but2").removeEventListener("click",eventTest2);
+    }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tank Game1.0</title>
+
+</head>
+<body onkeydown="doSomething(event)">
+    <div id="field" style="background-color: black;width: 500px;height: 400px;position: absolute;">
+        <div id="tank" style="background-image: url('tank.png');width: 40px;height: 40px;position: absolute"></div>
+    </div>
+
+    <script type="text/javascript">
+        // 使用面向对象的方式 完成web坦克大战1.0  可以通过asdw来控制坦克的走向
+
+        function MyTank(x,y,direct) {
+            this.x = x;//坦克的横坐标
+            this.y = y;//坦克的纵坐标
+            this.direct = direct;//坦克的方向
+            this.speed = 10;//坦克的速度
+
+            //初始化坦克
+            var tank = document.getElementById("tank");
+            tank.style.left=this.x+"px";
+            tank.style.top=this.y+"px";
+            tank.style.backgroundPositionY = "0px";
+
+
+            this.move = function move(event) {
+                //a 65 s83 d68 w87 分别表示left up down right
+                //
+                //创建方向
+                switch (event.keyCode) {
+                    //a 表示左
+                    case 65:
+                        this.x-=this.speed;
+                        this.direct=65
+                        tank.style.backgroundPositionY = "40px";
+                        break;
+
+                    case 83:
+                        this.y+=this.speed;
+                        this.direct=83;
+                        tank.style.backgroundPositionY = "80px";
+                        break;
+
+                    case 68:
+                        this.x+=this.speed;
+                        this.direct=68;
+                        tank.style.backgroundPositionY = "120px";
+                        break;
+
+                    case 87:
+                        this.y-=this.speed;
+                        this.direct=87;
+                        tank.style.backgroundPositionY = "0px";
+                        break;
+                }
+                //统一改变坦克的位置
+                    tank.style.left=this.x+"px";
+                    tank.style.top=this.y+"px";
+            };
+
+        }
+        //判断用户想要干什么
+        function doSomething(event) {
+            if(event.keyCode === 65 || event.keyCode === 83|| event.keyCode === 68|| event.keyCode === 87){
+                hero.move(event);
+            }
+            //回头可以调整开火的按键
+        }
+        //创建坦克
+        var hero = new MyTank(200,360,87);
+    </script>
+    
+</body>
+</html>

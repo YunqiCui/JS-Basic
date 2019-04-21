@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onkeydown = "return move(event)">
+<!--代码在js 视频41集-->
+
+<table border = "1">
+<tr>
+    <td></td>
+    <td><input type = "button" value="Move   Up" onclick="move(this)"/></td>
+    <td></td>
+</tr>
+<tr>
+    <td><input type = "button" value="Move Left" onclick="move(this)"/></td>
+    <td></td>
+    <td><input type = "button" value="Move Right" onclick="move(this)"/></td>
+</tr>
+<tr>
+    <td></td>
+    <td><input type = "button" value="Move Down" onclick="move(this)"/></td>
+    <td></td>
+</tr>
+</table>
+
+<div id="wugui" style="left: 200px;position: absolute;left: 100px;top: 200px;">
+    <img src="wugui.jpg" border="1" alt=""/>
+</div>
+
+<div id="cock" style="left: 200px;position: absolute;top: 200px;">
+    <img src="cock.jpg" border="1" alt=""/>
+</div>
+
+</body>
+</html>

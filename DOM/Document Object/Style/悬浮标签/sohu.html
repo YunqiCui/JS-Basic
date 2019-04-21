@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sohu</title>
+    <link rel="stylesheet" href="sohudiv.css" type="text/css"/>
+    <script type="text/javascript">
+        function change(val,obj) {
+            obj.style.backgroundColor="#FFC12D";
+            if(val==="zs"){
+
+                zs.style.display = "block";
+                rz.style.display = "none";
+                cg.style.display = "none";
+
+            }else if(val==="rz"){
+                zs.style.display = "none";
+                rz.style.display = "block";
+                cg.style.display = "none";
+
+            }else if(val==="cg"){
+                zs.style.display = "none";
+                rz.style.display = "none";
+                cg.style.display = "block";
+            }
+        }
+
+        //当鼠标移走时 把标签背景色变回silver
+        function changeBack(obj) {
+            obj.style.backgroundColor="silver";
+        }
+
+    </script>
+</head>
+<body>
+    <div class="div1">
+
+        <div class="nav">
+            <ul>
+                <li onmouseover="change('zs',this)" onmouseout="changeBack(this)">招生</li>
+                <li onmouseover="change('rz',this)" onmouseout="changeBack(this)">热招</li>
+                <li onmouseover="change('cg',this)" onmouseout="changeBack(this)">出国</li>
+            </ul>
+        </div>
+<!--        超链接div-->
+        <div id="zs" class="zs">
+            <ul>
+                <li><a href="#">招生招生招生</a></li>
+                <li><a href="#">招生招生招生</a></li>
+                <li><a href="#">招生招生招生</a></li>
+                <li><a href="#">招生招生招生</a></li>
+                <li><a href="#">招生招生招生</a></li>
+                <li><a href="#">招生招生招生</a></li>
+                <li><a href="#">招生招生招生</a></li>
+                <li><a href="#">招生招生招生</a></li>
+                <li><a href="#">招生招生招生</a></li>
+            </ul>
+        </div>
+        <div id="rz" class="rz">
+            <ul>
+                <li><a href="#">热招热招热招</a></li>
+                <li><a href="#">热招热招热招</a></li>
+                <li><a href="#">热招热招热招</a></li>
+                <li><a href="#">热招热招热招</a></li>
+                <li><a href="#">热招热招热招</a></li>
+                <li><a href="#">热招热招热招</a></li>
+                <li><a href="#">热招热招热招</a></li>
+                <li><a href="#">热招热招热招</a></li>
+                <li><a href="#">热招热招热招</a></li>
+
+            </ul>
+        </div>
+        <div id="cg" class="cg">
+            <ul>
+                <li><a href="#">出国出国出国</a></li>
+                <li><a href="#">出国出国出国</a></li>
+                <li><a href="#">出国出国出国</a></li>
+                <li><a href="#">出国出国出国</a></li>
+                <li><a href="#">出国出国出国</a></li>
+                <li><a href="#">出国出国出国</a></li>
+                <li><a href="#">出国出国出国</a></li>
+                <li><a href="#">出国出国出国</a></li>
+                <li><a href="#">热招热招热招</a></li>
+            </ul>
+        </div>
+        <div></div>
+        <div></div>
+
+    </div>
+    
+</body>
+</html>

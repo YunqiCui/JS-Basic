@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OK</title>
+    <script language="JavaScript" type="text/javascript">
+
+        function transferTo() {
+            //跳转页面时 删掉定时器
+            clearInterval(myTimer);
+            window.open("manage.html","_self");
+        }
+        setTimeout("transferTo()",5000);
+
+        function changeSpan(){
+            $("myspan").innerText = parseInt($("myspan").innerText)-1;
+        }
+
+        var myTimer = setInterval(changeSpan, 1000);
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+    </script>
+</head>
+<body>
+登陆成功<span id="myspan">5</span>秒后自动跳转到管理页面。
+</body>
+</html>

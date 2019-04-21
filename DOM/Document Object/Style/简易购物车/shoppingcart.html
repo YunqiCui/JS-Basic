@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <h1>My shopping cart</h1>
+    <script type="text/javascript">
+        function shopping() {
+            //每当checkbox中的一个元素被选中时，遍历所有checkbox元素 计算总价
+            var fruits = document.getElementsByName("fruit");
+            var totalprice = 0;
+
+            for (var i = 0; i < fruits.length; i++) {
+                //判断是否选择了这个水果
+                if (fruits[i].checked){
+                    totalprice+=parseFloat(fruits[i].value);
+                }
+            }
+            myspan.innerText= "$"+totalprice;
+        }
+    </script>
+</head>
+<body>
+   <input type="checkbox" name="fruit" onclick="shopping(this)" value="10"/>Apple $10<br/>
+   <input type="checkbox" name="fruit" onclick="shopping(this)" value="20"/>Banana 20$<br/>
+   <input type="checkbox" name="fruit" onclick="shopping(this)" value="30"/>Watermelon 30$<br/>
+   <input type="checkbox" name="fruit" onclick="shopping(this)" value="40"/>Pear $40<br/>
+   <input type="checkbox" name="fruit" onclick="shopping(this)" value="50"/>Peach $50<br/>
+    Total Price: <span id="myspan">$0</span>
+
+</body>
+</html>

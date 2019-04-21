@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inherit Learning</title>
+    <script language="JavaScript" type="text/javascript">
+
+        // function MidStu(name,age) {
+        //     this.name = name;
+        //     this.age = age;
+        //
+        //     this.show = function () {
+        //         window.alert(this.name + " " +this.age);
+        //     }
+        //
+        //     this.pay = function (money) {
+        //         window.alert("Should pay: " + money*0.8);
+        //     }
+        // }
+        //
+        // function PrimaryStu() {
+        //     this.name = name;
+        //     this.age = age;
+        //
+        //     this.show = function () {
+        //         window.alert(this.name + " " +this.age);
+        //     }
+        //
+        //     this.pay = function (money) {
+        //         window.alert("Should pay: " + money*0.5);
+        //     }
+        // }
+
+        function Student(name,age) {
+            this.name = name;
+            this.age = age;
+
+            this.show = function () {
+                window.alert(this.name + " " +this.age);
+            }
+        }
+
+
+        //1。通过这种方式 可以实现多重继承（继承多个父类）
+        //2。Object类 是JS 所有类的基础类
+
+        //JS 不支持重载Overloading:参数类型和参数个数，不能决定调用哪个函数，永远执行最后一个同名字的函数。但是由于JS 可变参数 也可以称为天生支持重载.
+        function MidStu(name,age){
+            this.stu = Student;
+            this.stu (name,age);
+
+            //Overloading
+            // this.show = function () {
+            //     window.alert("MidStu show()");
+            // }
+        }
+
+        function PrimaryStu(name,age) {
+            this.pristu = Student;
+            this.pristu(name,age);//对象冒充：js 是动态语言 这句话执行了STUDENT 里的代码，所以不能少 js只有在执行的时候才会分配地址空间。
+        }
+
+        var midstudent = new MidStu("cuiyunqi",30);
+        midstudent.show();
+        var primarystudent = new PrimaryStu("abc",45);
+        primarystudent.show();
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
